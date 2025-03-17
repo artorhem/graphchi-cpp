@@ -60,6 +60,7 @@
 #include "engine/dynamic_graphs/graphchi_dynamicgraph_engine.hpp"
 #include "engine/auxdata/degree_data.hpp"
 #include "preprocessing/util/orderbydegree.hpp"
+#include "util/memcounter.hpp"
 
 using namespace graphchi;
 
@@ -427,7 +428,8 @@ struct TriangleCountingProgram : public GraphChiProgram<VertexDataType, EdgeData
 
 
 int main(int argc, const char ** argv) {
-    /* GraphChi initialization will read the command line 
+    _flexograph_profile::MemoryCounter memcounter;
+    /* GraphChi initialization will read the command line
        arguments and the configuration file. */
     graphchi_init(argc, argv);
     

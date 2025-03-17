@@ -42,6 +42,7 @@
 #include "api/functional/functional_api.hpp"
 #include "graphchi_basic_includes.hpp"
 #include "util/toplist.hpp"
+#include "util/memcounter.hpp"
 
 using namespace graphchi;
 
@@ -83,6 +84,7 @@ struct pagerank_kernel : public functional_kernel<float, float> {
 }; 
 
 int main(int argc, const char ** argv) {
+    _flexograph_profile::MemoryCounter memcounter;
     graphchi_init(argc, argv);
     metrics m("pagerank");
     

@@ -49,6 +49,7 @@
 
 #include "graphchi_basic_includes.hpp"
 #include "util/labelanalysis.hpp"
+#include "util/memcounter.hpp"
 
 using namespace graphchi;
 
@@ -152,7 +153,8 @@ struct ConnectedComponentsProgram : public GraphChiProgram<VertexDataType, EdgeD
 };
 
 int main(int argc, const char ** argv) {
-    /* GraphChi initialization will read the command line 
+    _flexograph_profile::MemoryCounter memoryCounter;
+    /* GraphChi initialization will read the command line
      arguments and the configuration file. */
     graphchi_init(argc, argv);
 
