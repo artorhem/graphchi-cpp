@@ -728,7 +728,7 @@ namespace graphchi {
             
             if (svertex_t().computational_edges()) {
                 // Heuristic
-                set_maxwindow(membudget_mb * 1024 * 1024 / 3 / 100);
+                set_maxwindow((size_t)membudget_mb * 1024 * 1024 / 3 / 100);
                 logstream(LOG_INFO) << "Set maxwindow:" << maxwindow << std::endl;
             }
             
