@@ -418,7 +418,7 @@ namespace graphchi {
                 
                 if (!async_edata_loading && !only_adjacency) {
                     /* Wait until blocks loaded (non-asynchronous version) */
-                    for(int blid=(int)edgeptr/blocksize; blid<=(int)(edgeptr_end /blocksize); blid++) {
+                    for(int blid=(int)(edgeptr/blocksize); blid<=(int)(edgeptr_end /blocksize); blid++) {
                         if (blid < nblocks) {
                             while(doneptr[blid] != 0) { usleep(10); }
                         }

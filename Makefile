@@ -27,6 +27,10 @@ sharder_basic: src/preprocessing/sharder_basic.cpp $(HEADERS)
 	@mkdir -p bin
 	$(CPP) $(CPPFLAGS) src/preprocessing/sharder_basic.cpp -o bin/sharder_basic $(LINKERFLAGS)
 
+sharder_basic_cmdline: src/preprocessing/sharder_basic_cmdline.cpp $(HEADERS)
+	@mkdir -p bin
+	$(CPP) $(CPPFLAGS) src/preprocessing/sharder_basic_cmdline.cpp -o bin/sharder_basic_cmdline $(LINKERFLAGS)
+
 example_apps/% : example_apps/%.cpp $(HEADERS)
 	@mkdir -p bin/$(@D)
 	$(CPP) $(CPPFLAGS) -Iexample_apps/ $@.cpp -o bin/$@ $(LINKERFLAGS) 

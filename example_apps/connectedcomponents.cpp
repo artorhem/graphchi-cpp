@@ -44,6 +44,8 @@
  */
 
 
+#define GRAPHCHI_DISABLE_COMPRESSION
+
 #include <cmath>
 #include <string>
 
